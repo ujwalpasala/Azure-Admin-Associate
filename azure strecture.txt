@@ -1,0 +1,36 @@
+                 Azure Subscription
+                        │
+                 Resource Group
+                        │
+              ┌─────────┴─────────┐
+              │                   │
+           VM-01                VM-02
+              │                   │
+        VM Extensions       VM Extensions
+              │                   │
+        Azure Monitor Agent (AMA)
+              │
+              ▼
+      Data Collection Rule
+              │
+              ▼
+     Log Analytics Workspace
+              │
+              ▼
+        Azure Monitor
+              │
+        Monitoring / Alerts
+
+
+             Azure Policy
+                  │
+       Checks all VMs for
+       required extensions
+                  │
+          Missing extension?
+             /          \
+           YES           NO
+            │             │
+        Remediate       Compliant
+            │
+       Install Extension
